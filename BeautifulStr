@@ -1,0 +1,18 @@
+boolean checkPalindrome(String inputString) {
+    /*Stack<Character> stk = new Stack<>();
+    Queue<Character> q = new Queue<>();
+    for (char c : inputString.toCharArray()) {
+        stk.push(c);
+        q.offer(c);        
+    }*/
+    int[] inp = new int[26];
+    for (char c : inputString.toCharArray()) {
+        System.out.println("The value is " + (c - 'a'));
+        inp[c - 'a']++;
+    }
+    int[] res = Arrays.stream(inp).filter(i -> i == 1).toArray();
+    if (res.length > 1)
+        return false;
+    else 
+        return true;
+}
